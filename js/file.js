@@ -203,3 +203,14 @@ window.addEventListener("keydown", (e) => {
 window.addEventListener("keyup", (e) => {
     if (e.code == "Space" || e.key == "ArrowUp") isKeyDown = false;
 });
+// --- 3. 監聽手機觸控事件 ---
+// 使用 { passive: false } 是為了能使用 e.preventDefault()
+window.addEventListener("touchstart", (e) => {
+    // 阻止預設的縮放或滾動行為，讓遊戲更流暢
+    if (e.touches.length > 1) e.preventDefault(); 
+    handleInputStart();
+}, { passive: false });
+
+window.addEventListener("touchend", (e) => {
+    handleInputEnd();
+});

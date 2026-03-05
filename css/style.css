@@ -114,3 +114,10 @@ body {
     text-align: center;
     z-index: 100;
 }
+
+* {
+    -webkit-touch-callout: none; /* 禁用長按選單 */
+    -webkit-user-select: none;   /* 禁用文字選取 */
+    user-select: none;
+    touch-action: manipulation;  /* 優化移動端點擊延遲 */
+}
